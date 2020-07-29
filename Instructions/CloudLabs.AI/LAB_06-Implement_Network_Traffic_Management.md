@@ -48,7 +48,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
    ```pwsh
    $location = '[Azure_region]'
 
-   $rgName = 'az104-06-rg1'
+   $rgName = 'az104-06-rg1-[deployId]'
 
    ```
 1. From the Cloud Shell pane, run the following to create the first virtual network and deploy a pair of virtual machines into it by using the template and parameter files you uploaded:
@@ -64,7 +64,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 1. From the Cloud Shell pane, run the following to use existing second resource group that will be hosting the second virtual network and the third virtual machine
 
    ```pwsh
-   $rgName = 'az104-06-rg2'
+   $rgName = 'az104-06-rg2-[deployId]'
 
    ```
 1. From the Cloud Shell pane, run the following to create the second virtual network and deploy a virtual machine into it by using the template and parameter files you uploaded:
@@ -80,7 +80,7 @@ In this task, you will deploy four virtual machines into the same Azure region. 
 1. From the Cloud Shell pane, run the following to use existing third resource group that will be hosting the third virtual network and the fourth virtual machine:
 
    ```pwsh
-   $rgName = 'az104-06-rg3'
+   $rgName = 'az104-06-rg3-[deployId]'
 
    ```
 1. From the Cloud Shell pane, run the following to create the third virtual network and deploy a virtual machine into it by using the template and parameter files you uploaded:
@@ -120,7 +120,7 @@ In this task, you will configure local peering between the virtual networks you 
     | Name of the peering from az104-06-vnet01 to remote virtual network | **az104-06-vnet01_to_az104-06-vnet2** |
     | Virtual network deployment model | **Resource manager** |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Virtual network | **az104-06-vnet2 (az104-06-rg2)** |
+    | Virtual network | **az104-06-vnet2 (az104-06-rg2-[deployId])** |
     | Name of the peering from az104-06-vnet2 to az104-06-vnet01 | **az104-06-vnet2_to_az104-06-vnet01** |
     | Allow virtual network access from az104-06-vnet01 to az104-06-vnet2 | **Enabled** |
     | Allow virtual network access from az104-06-vnet2 to az104-06-vnet01 | **Enabled** |
@@ -143,7 +143,7 @@ In this task, you will configure local peering between the virtual networks you 
     | Name of the peering from az104-06-vnet01 to remote virtual network | **az104-06-vnet01_to_az104-06-vnet3** |
     | Virtual network deployment model | **Resource manager** |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Virtual network | **az104-06-vnet3 (az104-06-rg3)** |
+    | Virtual network | **az104-06-vnet3 (az104-06-rg3-[deployId])** |
     | Name of the peering from az104-06-vnet3 to az104-06-vnet01 | **az104-06-vnet3_to_az104-06-vnet01** |
     | Allow virtual network access from az104-06-vnet01 to az104-06-vnet3 | **Enabled** |
     | Allow virtual network access from az104-06-vnet3 to az104-06-vnet01 | **Enabled** |
@@ -170,7 +170,7 @@ In this task, you will test transitivity of virtual network peering by using Net
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **az104-06-rg1-[deployId]** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az104-06-vm0** |
     | Destination | **Specify manually** |
@@ -191,7 +191,7 @@ In this task, you will test transitivity of virtual network peering by using Net
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg1** |
+    | Resource group | **az104-06-rg1-[deployId]** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az104-06-vm0** |
     | Destination | **Specify manually** |
@@ -210,7 +210,7 @@ In this task, you will test transitivity of virtual network peering by using Net
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg2** |
+    | Resource group | **az104-06-rg2-[deployId]** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az104-06-vm2** |
     | Destination | **Specify manually** |
@@ -276,7 +276,7 @@ In this task, you will configure and test routing between the two spoke virtual 
     | --- | --- |
     | Name | **az104-06-rt23** |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg2** |
+    | Resource group | **az104-06-rg2-[deployId]** |
     | Location | the name of the Azure region in which you created the virtual networks |
     | Virtual network gateway route propagation | **Disabled** |
 
@@ -312,7 +312,7 @@ In this task, you will configure and test routing between the two spoke virtual 
     | --- | --- |
     | Name | **az104-06-rt32** |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg3** |
+    | Resource group | **az104-06-rg3-[deployId]** |
     | Location | the name of the Azure region in which you created the virtual networks |
     | Virtual network gateway route propagation | **Disabled** |
 
@@ -347,7 +347,7 @@ In this task, you will configure and test routing between the two spoke virtual 
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az104-06-rg2** |
+    | Resource group | **az104-06-rg2-[deployId]** |
     | Source type | **Virtual machine** |
     | Virtual machine | **az104-06-vm2** |
     | Destination | **Specify manually** |
@@ -373,7 +373,7 @@ In this task, you will implement an Azure Load Balancer in front of the two Azur
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | select the existing resource group **az104-06-rg4** |
+    | Resource group | select the existing resource group **az104-06-rg4-[deployId]** |
     | Name | **az104-06-lb4** |
     | Region| name of the Azure region into which you deployed all other resources in this lab |
     | Type | **Public** |
@@ -470,7 +470,7 @@ In this task, you will implement an Azure Application Gateway in front of the tw
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | select the existing resource group **az104-06-rg5** |
+    | Resource group | select the existing resource group **az104-06-rg5-[deployId]** |
     | Application gateway name | **az104-06-appgw5** |
     | Region | name of the Azure region into which you deployed all other resources in this lab |
     | Tier | **Standard V2** |

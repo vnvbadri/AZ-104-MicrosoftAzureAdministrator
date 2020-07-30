@@ -66,7 +66,7 @@ In this task, you will deploy Azure virtual machines into different availability
 
     | Setting | Value | 
     | --- | --- |
-    | Name | **az104-08-rg01-[deployId]-vnet** |
+    | Name | **az104-08-rg01-vnet** |
     | Address range | **10.80.0.0/20** |
     | Subnet name | **subnet0** |
     | Subnet range | **10.80.0.0/24** |
@@ -367,12 +367,12 @@ In this task, you will deploy Azure virtual machine scale set across availabilit
 
     | Setting | Value | 
     | --- | --- |
-    | Name | **az104-08-rg02-[deployId]-vnet** |
+    | Name | **az104-08-rg02-vnet** |
     | Address range | **10.82.0.0/20** |
     | Subnet name | **subnet0** |
     | Subnet range | **10.82.0.0/24** |
  
-    >**Note**: Once you create a new virtual network and return to the **Networking** tab of the **Create a virtual machine scale set** blade, the **Virtual network** value will be automatically set to **az104-08-rg02-[deployId]-vnet**.
+    >**Note**: Once you create a new virtual network and return to the **Networking** tab of the **Create a virtual machine scale set** blade, the **Virtual network** value will be automatically set to **az104-08-rg02-vnet**.
 
 1. Back on the **Networking** tab of the **Create a virtual machine scale set** blade, click the **Edit network interface** icon to the right of the network interface entry. 
 

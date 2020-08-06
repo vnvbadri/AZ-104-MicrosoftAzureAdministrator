@@ -44,6 +44,8 @@ In this task, you will deploy three virtual machines, each into a separate virtu
    $rgName = 'az104-05-rg0-[deployId]'
 
    ```
+   >**Note**: In order to identify Azure regions, from a PowerShell session in Cloud Shell, run **(Get-AzLocation).Location**
+   
 1. From the Cloud Shell pane, run the following to create the first virtual network and deploy a virtual machine into it by using the template and parameter files you uploaded:
 
    ```pwsh

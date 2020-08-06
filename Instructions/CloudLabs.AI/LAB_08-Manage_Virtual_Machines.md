@@ -105,7 +105,6 @@ In this task, you will deploy Azure virtual machines into different availability
     | --- | --- |
     | Resource group | **az104-08-rg01-[deployId]** |
     | Network Interface Name | **az104-08-vm1-nic1** |
-    | Public Ip Address Name | **az104-08-vm1-ip** |
     | Virtual Machine Name | **az104-08-vm1** |
     | Virtual Machine Computer Name | **az104-08-vm1** |
     | Admin Username | **Student** |
@@ -185,8 +184,8 @@ In this task, you will install Windows Server Web Server role on the two Azure v
 
    ```
 
-    >**Note**: This section of the template defines the same Azure virtual machine custom script extension that you deployed earlier to the first virtual machine via Azure PowerShell.
-
+ >**Note**: This section of the template defines the same Azure virtual machine custom script extension that you deployed earlier to the first virtual machine via Azure PowerShell.
+ 
 1. Click **Save** and, back on the **Custom template** blade, enable the checkbox **I agree to the terms and conditions stated above** and click **Purchase**.
 
     >**Note**: Disregard the message stating **The resource group is in a location that is not supported by one or more resources in the template. Please choose a different resource group**. This is expected and can be ignored in this case.
@@ -505,13 +504,13 @@ In this task, you will change the size of virtual machine scale set instances, c
     | Setting | Value |
     | --- |--- |
     | Metric source | **Current resource (az10480vmss0)** |
-    | Time aggregation | **Maximum** |
+    | Time aggregation | **Average** |
     | Metric namespace | **Virtual Machine Host** |
     | Metric name | **Network In Total** |
     | Operator | **Greater than** |
     | Metric threshold to trigger scale action | **10** |
     | Duration (in minutes) | **1** |
-    | Time grain statistic | **Maximum** |
+    | Time grain statistic | **Average** |
     | Operation | **Increase count by** |
     | Instance count | **1** |
     | Cool down (minutes) | **5** |
